@@ -18,7 +18,8 @@ Add the dependency in the form
 ```css
   repositories {
       dependencies {
-            compile 'com.github.salimkayabasi:glamdring:VERSION'
+            debugCompile 'com.github.salimkayabasi.glamdring:debug:VERSION'
+            releaseCompile 'com.github.salimkayabasi.glamdring:release:VERSION'
         }
   	}
 
