@@ -1,9 +1,5 @@
 apply plugin: 'com.android.library'
 
-def STRING = 'String'
-def GIT_SHA = 'GIT_SHA'
-def BUILD_TIME = 'BUILD_TIME'
-
 android {
   compileSdkVersion rootProject.ext.compileSdkVersion
   buildToolsVersion "${rootProject.ext.buildToolsVersion}"
@@ -16,8 +12,6 @@ android {
     versionCode rootProject.ext.versionCode
     versionName rootProject.ext.versionName
 
-    buildConfigField STRING, GIT_SHA, "\"${rootProject.ext.gitSha}\""
-    buildConfigField STRING, BUILD_TIME, "\"${rootProject.ext.buildTime}\""
   }
   buildTypes {
     release {

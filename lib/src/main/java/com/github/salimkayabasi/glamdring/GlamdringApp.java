@@ -3,14 +3,12 @@ package com.github.salimkayabasi.glamdring;
 import android.app.Application;
 import android.content.Context;
 
-import com.crashlytics.android.Crashlytics;
 import com.github.salimkayabasi.glamdring.utils.LogUtil;
 import com.github.salimkayabasi.glamdring.utils.PicassoUtil;
 
 import java.util.concurrent.atomic.AtomicReference;
 
 import butterknife.ButterKnife;
-import io.fabric.sdk.android.Fabric;
 
 public class GlamdringApp extends Application {
 
@@ -24,7 +22,6 @@ public class GlamdringApp extends Application {
   public void onCreate() {
     super.onCreate();
     INSTANCE.set(this);
-    Fabric.with(this, new Crashlytics());
     LogUtil.init();
     PicassoUtil.init(this);
     ButterKnife.setDebug(BuildConfig.DEBUG);
