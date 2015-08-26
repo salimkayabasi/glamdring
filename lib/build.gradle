@@ -1,0 +1,47 @@
+apply plugin: 'com.android.library'
+
+def STRING = 'String'
+def GIT_SHA = 'GIT_SHA'
+def BUILD_TIME = 'BUILD_TIME'
+
+android {
+  compileSdkVersion rootProject.ext.compileSdkVersion
+  buildToolsVersion "${rootProject.ext.buildToolsVersion}"
+
+  defaultConfig {
+
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.targetSdkVersion
+
+    versionCode rootProject.ext.versionCode
+    versionName rootProject.ext.versionName
+
+    buildConfigField STRING, GIT_SHA, "\"${rootProject.ext.gitSha}\""
+    buildConfigField STRING, BUILD_TIME, "\"${rootProject.ext.buildTime}\""
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_7
+    targetCompatibility JavaVersion.VERSION_1_7
+  }
+}
+
+dependencies {
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+
+  compile 'com.jakewharton.timber:timber:3.1.0'
+
+  debugCompile "com.facebook.stetho:stetho:${rootProject.ext.stethoVersion}"
+  debugCompile "com.facebook.stetho:stetho-okhttp:${rootProject.ext.stethoVersion}"
+
+  //crashlytics
+  compile('com.crashlytics.sdk.android:crashlytics:2.5.1@aar') {
+    transitive = true;
+  }
+}
