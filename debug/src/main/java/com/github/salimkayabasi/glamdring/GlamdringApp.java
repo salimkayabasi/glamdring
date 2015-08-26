@@ -5,6 +5,7 @@ import android.content.Context;
 
 import com.github.salimkayabasi.glamdring.utils.LogUtil;
 import com.github.salimkayabasi.glamdring.utils.PicassoUtil;
+import com.github.salimkayabasi.glamdring.utils.StethoUtil;
 
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -23,6 +24,7 @@ public class GlamdringApp extends Application {
     super.onCreate();
     INSTANCE.set(this);
     LogUtil.init();
+    StethoUtil.init(this);
     PicassoUtil.init(this);
     ButterKnife.setDebug(BuildConfig.DEBUG);
   }
