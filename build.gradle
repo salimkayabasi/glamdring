@@ -17,7 +17,6 @@ allprojects {
     jcenter()
     mavenCentral()
     mavenLocal()
-    maven { url 'https://maven.fabric.io/public' }
   }
 }
 
@@ -25,7 +24,7 @@ ext {
 
   versionMajor = 0
   versionMinor = 3
-  versionPatch = 0
+  versionPatch = 1
   versionBuild = 0
 
   buildToolsVersion = '23.0.0'
