@@ -13,16 +13,9 @@ import butterknife.ButterKnife;
 
 public class GlamdringApp extends Application {
 
-  private static final AtomicReference<GlamdringApp> INSTANCE = new AtomicReference<>();
-
-  public static Context getContext() {
-    return INSTANCE.get();
-  }
-
   @Override
   public void onCreate() {
     super.onCreate();
-    INSTANCE.set(this);
     LogUtil.init();
     StethoUtil.init(this);
     PicassoUtil.init(this);
