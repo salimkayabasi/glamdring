@@ -38,7 +38,7 @@ public final class PicassoUtil {
         .listener(new Picasso.Listener() {
           @Override
           public void onImageLoadFailed(Picasso picasso, Uri uri, Exception e) {
-            Timber.i(uri.toString(), e);
+            Timber.i(e, uri.toString());
           }
         })
         .build();
