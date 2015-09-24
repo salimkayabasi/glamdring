@@ -1,6 +1,7 @@
 package com.github.salimkayabasi.glamdring.utils;
 
 import android.content.Context;
+import android.net.Uri;
 
 import com.squareup.okhttp.Cache;
 import com.squareup.okhttp.OkHttpClient;
@@ -34,6 +35,12 @@ public final class PicassoUtil {
     }
     Picasso picasso = new Picasso.Builder(context)
         .downloader(new OkHttpDownloader(client))
+        .listener(new Picasso.Listener() {
+          @Override
+          public void onImageLoadFailed(Picasso picasso, Uri uri, Exception e) {
+            Timber.i(uri.toString(), e.getMessage(), e);
+          }
+        })
         .build();
 
     Picasso.setSingletonInstance(picasso);
