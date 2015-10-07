@@ -33,5 +33,4 @@ dependencies {
   compile rootProject.ext.timber
   compile rootProject.ext.okhttp
   compile rootProject.ext.butterKnife
-  compile rootProject.ext.picasso
 }
