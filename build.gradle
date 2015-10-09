@@ -30,8 +30,8 @@ ext {
 
   versionMajor = 0
   versionMinor = 3
-  versionPatch = 3
-  versionBuild = 1
+  versionPatch = 4
+  versionBuild = 0
 
   buildToolsVersion = '23.0.1'
   compileSdkVersion = 23
@@ -43,7 +43,7 @@ ext {
   butterknifeVersion = '7.0.1'
 
   butterKnife = "com.jakewharton:butterknife:$butterknifeVersion"
-  timber = 'com.jakewharton.timber:timber:3.1.0'
+  timber = 'com.jakewharton.timber:timber:4.0.1'
   okhttp = "com.squareup.okhttp:okhttp:${rootProject.ext.okhttpLibVersion}"
 
   versionCode = versionMajor * 1000000 + versionMinor * 10000 + versionPatch * 100 + versionBuild
